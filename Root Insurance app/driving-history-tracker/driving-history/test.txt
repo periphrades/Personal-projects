@@ -1,0 +1,13 @@
+Driver Dan
+Driver Alex
+Driver Bob
+Trip Dan 07:15 07:45 17.3
+Trip Dan 06:12 06:32 21.8
+Trip Alex 12:01 13:16 42.0
+Driver Ruth
+Trip Ruth 20:00 22:17 128.6
+
+Ignore this line and blank line above
+Ignore this line and discard following trips
+Trip Ruth 09:00 09:15 1.2
+Trip Bob 11:05 12:20 130.3

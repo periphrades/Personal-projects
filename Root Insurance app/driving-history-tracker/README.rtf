@@ -1,0 +1,90 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red5\green61\blue204;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c0\c33896\c83855;}
+\margl1440\margr1440\vieww14600\viewh14660\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+
+\b \cf2 \ul \ulc2 driving-history.jar 
+\b0 \cf0 \ulnone \
+\
+	Usage:	
+\f1 \cf3 java -jar driving-history.jar input.txt
+\f0 \cf0 \
+\
+
+\b \ul driving-history
+\b0 \ulnone \
+\
+	Data and logical methods are encapsulated into separate classes according to conceptual relationship or distiction.  Encapsulation allows for ease of debugging, refactoring, and possible future additions of features.\
+\
+\
+	\ul DrivingHistoryTracker\ulnone \
+	\
+	- Contains the main method.\
+\
+	- Instantiates an object to implement the CommandReaderDAO interface.  This is currently a file reader (FileCommandReaderDAO), but could be replaced in order to read the commands from some other source.\
+\
+	- Instantiates a Controller and calls the run() method.\
+\
+\
+	\ul Controller\ulnone \
+\
+	- Routes the logic of the rest of the program.\
+\
+	- Prints the output summary to the console.\
+\
+	- Contains a private method to order the Drivers for output.  Drivers are stored as a Map when commands are being processed, so that they can be easily accessed when additional Trips are being added.  For ordering and output, the Drivers are transferred into a List.\
+\
+\
+	\ul FileCommandReaderDAO\ulnone \
+\
+	- Contains a single method to read the input file and return its commands as a List of Strings.\
+\
+\
+	\ul CommandProcessor\ulnone \
+\
+	- Processing the commands is not an I/O function, so this work has been placed into this separate class.\
+\
+	- Contains a single method that processes each command String in the List output from the FileCommandReaderDAO.\
+\
+		- One command instantiates a Driver data object.\
+		- The other command instantiates a Trip data object and adds it to a list of Trips in the corresponding Driver object.\
+		- Any blank lines or illegitimate commands will be ignored.\
+\
+	\ul Trip\ulnone \
+\
+	- A data object to represent a trip by a driver.\
+\
+	- In addition to getters and setters are two additional methods / derived attributes:\
+\
+		- totalDriveTimeInMinutes\
+		- averageSpeed: used by CommandProcessor to determine whether the trip passes the criteria to be recorded.\
+\
+\
+	\ul Driver\ulnone \
+\
+	- A data object to represent an individual driver.\
+\
+	- Contains derived attributes from the Driver\'92s List of Trips:\
+\
+		- getTotalMilesDriven\
+		- getTotalMinutesDriven\
+		- getAverageSpeed\
+\
+	- Method summary() returns the output String for this driver.\
+\
+	- Method compareTo() implements the Comparable interface, allowing the Driver objects to be ordered according to total miles driven for the final output.\
+\
+\
+
+\b \ul Testing
+\b0 \ulnone \
+\
+	- JUnit tests for all public methods (except getters and setters) in CommandProcessor, Trip and Driver.\
+\
+	- Integration test for FileCommandReaderDAO uses the included test file \'93test.txt\'94 to verify return of the correct number of command Strings.\
+\
+}

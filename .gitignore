@@ -1,0 +1,3 @@
+# ignore filesystem housekeeping files created by OSX
+.DS_Store
+.DS_Store?
