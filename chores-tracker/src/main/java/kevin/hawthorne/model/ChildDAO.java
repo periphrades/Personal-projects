@@ -8,9 +8,11 @@ public interface ChildDAO {
 
 	public List<WeekTask> getChildWeekTasks(Child user);
 
-	void addChildWeekTask(Task task, Child user, String note, int timesPerWeek);
+	public void addChildWeekTask(Task task, Child user, String note, int timesPerWeek);
 
-	void addChildDayTask(Task task, Child user, String note);
+	public void addChildDayTask(Task task, Child user, String note);
+
+	public List<Child> getAllChildren();
 	
 	
 }

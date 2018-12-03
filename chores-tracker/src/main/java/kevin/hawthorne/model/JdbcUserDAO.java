@@ -39,7 +39,7 @@ public class JdbcUserDAO implements UserDAO {
 		if ( result.getString("status").equals("parent") ) {
 			user = new User("parent");
 		} else if ( result.getString("status").equals("child") ) {
-			user = new Child("child");
+			user = new Child();
 		}
 		
 		if (user == null) {

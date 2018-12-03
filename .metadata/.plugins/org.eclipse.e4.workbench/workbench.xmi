@@ -9,7 +9,7 @@
     <persistedState key="isRestored" value="true"/>
     <persistedState key="show_in_time" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;show_in_time/>"/>
     <persistedState key="workingSets" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workingSets/>"/>
-    <persistedState key="aggregateWorkingSetId"/>
+    <persistedState key="aggregateWorkingSetId" value="Aggregate for window 1543683255321"/>
     <tags>topLevel</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_5WDEsOw7Eei0j7XDek3CEw" selectedElement="_5WDEsew7Eei0j7XDek3CEw" horizontal="true">
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_5WDEsew7Eei0j7XDek3CEw" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_5n97IOw7Eei0j7XDek3CEw">
@@ -143,7 +143,7 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_5ngBEOw7Eei0j7XDek3CEw" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.navigator.resources.ProjectExplorer"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.navigator.resources"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xA;&lt;lastRecentlyUsedFilters/>&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1543683255321&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xA;&lt;lastRecentlyUsedFilters/>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
       <tags>active</tags>
@@ -269,7 +269,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_5a3TQOw7Eei0j7XDek3CEw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_5bHx8Ow7Eei0j7XDek3CEw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_4ru8f-w7Eei0j7XDek3CEw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_uZmo4PWJEeidzP5rtoyY4Q" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_4ru8f-w7Eei0j7XDek3CEw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_5a36UOw7Eei0j7XDek3CEw" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -296,7 +296,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_5a4hYOw7Eei0j7XDek3CEw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_5bJnIOw7Eei0j7XDek3CEw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_4rtuWOw7Eei0j7XDek3CEw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_uZsIcPWJEeidzP5rtoyY4Q" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_4rtuWOw7Eei0j7XDek3CEw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_5a4hYew7Eei0j7XDek3CEw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -775,7 +775,7 @@
       <parameters xmi:id="_4s_gqOw7Eei0j7XDek3CEw" elementId="org.eclipse.ui.views.showView.viewId" name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.ui.console.ConsoleView"/>
     </bindings>
     <bindings xmi:id="_4s_gqew7Eei0j7XDek3CEw" keySequence="COMMAND+BREAK" command="_4rhhC-w7Eei0j7XDek3CEw"/>
-    <bindings xmi:id="_4t11MOw7Eei0j7XDek3CEw" keySequence="COMMAND+CTRL+F" command="_4t1OIOw7Eei0j7XDek3CEw"/>
+    <bindings xmi:id="_t5C5gPWJEeidzP5rtoyY4Q" keySequence="COMMAND+CTRL+F" command="_4t1OIOw7Eei0j7XDek3CEw"/>
   </bindingTables>
   <bindingTables xmi:id="_4smfGuw7Eei0j7XDek3CEw" elementId="org.eclipse.debug.ui.debugging" bindingContext="_4r2RR-w7Eei0j7XDek3CEw">
     <bindings xmi:id="_4smfG-w7Eei0j7XDek3CEw" keySequence="COMMAND+F2" command="_4ruVaew7Eei0j7XDek3CEw"/>
@@ -1108,7 +1108,7 @@
     <bindings xmi:id="_4s6oIuw7Eei0j7XDek3CEw" keySequence="CTRL+SHIFT+D" command="_4ro1xuw7Eei0j7XDek3CEw"/>
   </bindingTables>
   <bindingTables xmi:id="_4t3DUOw7Eei0j7XDek3CEw" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_4qtBp-w7Eei0j7XDek3CEw">
-    <bindings xmi:id="_4t3DUew7Eei0j7XDek3CEw" keySequence="M1+W" command="_4t2cQew7Eei0j7XDek3CEw"/>
+    <bindings xmi:id="_t5DgkPWJEeidzP5rtoyY4Q" keySequence="M1+W" command="_4t2cQew7Eei0j7XDek3CEw"/>
   </bindingTables>
   <bindingTables xmi:id="_5nQwgew7Eei0j7XDek3CEw" bindingContext="_5nQwgOw7Eei0j7XDek3CEw"/>
   <bindingTables xmi:id="_5nRXkew7Eei0j7XDek3CEw" bindingContext="_5nRXkOw7Eei0j7XDek3CEw"/>
@@ -3180,7 +3180,7 @@
   <addons xmi:id="_4qtouuw7Eei0j7XDek3CEw" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_4qtou-w7Eei0j7XDek3CEw" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_4q3ZsOw7Eei0j7XDek3CEw" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_t4gG8fWJEeidzP5rtoyY4Q" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <addons xmi:id="_4tyx4Ow7Eei0j7XDek3CEw" elementId="org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler"/>
   <categories xmi:id="_4rbaYOw7Eei0j7XDek3CEw" elementId="org.eclipse.ui.category.edit" name="Edit"/>

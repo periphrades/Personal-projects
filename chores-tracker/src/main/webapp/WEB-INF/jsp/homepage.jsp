@@ -11,9 +11,7 @@
 	<body>
 	
 		<h2>Chores</h2>
-		
-		<strong>Task name: </strong> <c:out value = "${testTask.taskName}" />
-	
+
 	</body>
 
 </html>

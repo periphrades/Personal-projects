@@ -9,8 +9,8 @@ public class Child extends User {
 	private List<WeekTask> weekTasks;
 	
 
-	public Child(String status) {
-		super(status);
+	public Child() {
+		super("child");
 	}
 	
 

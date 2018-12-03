@@ -31,7 +31,6 @@ public class ChoresController {
 	@Autowired
 	private UserDAO userDAO;
 
-	
 	@RequestMapping (path = "/", method = RequestMethod.GET )
 	public String displayLogin(ModelMap map) {
 		
@@ -68,7 +67,6 @@ public class ChoresController {
 		
 		return "homepage";
 	}
-	
 	
 	
 }

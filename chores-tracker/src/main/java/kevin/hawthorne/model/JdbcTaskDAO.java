@@ -1,10 +1,7 @@
 package kevin.hawthorne.model;
 
-import java.time.LocalDate;
-import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import javax.sql.DataSource;
 
@@ -40,11 +37,13 @@ public class JdbcTaskDAO implements TaskDAO {
 	}
 	
 	@Override
-	public void addTask(String taskName) {
-		String sql = "INSERT INTO tasks (task_name) VALUES (?)";
+	public int addTask(String taskName) {
+		String sql = "INSERT INTO tasks (task_name) VALUES (?) RETURNING taskid";
 		
-		template.update(sql, taskName);
-		
+		SqlRowSet result = template.queryForRowSet(sql, taskName);
+		result.next();
+		int taskId = result.getInt("taskid");
+		return taskId;
 	}
 	
 	@Override
@@ -54,8 +53,24 @@ public class JdbcTaskDAO implements TaskDAO {
 		template.update(sql, taskId);
 	}
 	
+	@Override
+	public Task getTaskById(int taskId) {
+		Task task = null;
+		
+		String sql = "SELECT taskid, task_name FROM tasks WHERE taskid = ?";
+		
+		SqlRowSet result = template.queryForRowSet(sql, taskId);
+		
+		while(result.next()) {
+			task = mapRowSetToTask(result);
+		}
+		
+		return task;
+	}
+	
 
 	private Task mapRowSetToTask(SqlRowSet results) {
+		
 		Task task = new Task();
 		task.setTaskId(results.getInt("taskid"));
 		task.setTaskName(results.getString("task_name"));

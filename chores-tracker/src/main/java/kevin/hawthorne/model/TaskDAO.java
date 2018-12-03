@@ -6,9 +6,11 @@ public interface TaskDAO {
 
 	public List<Task> getAllTasks();
 
-	void addTask(String taskName);
+	public int addTask(String taskName);
 
-	void deleteTask(int taskId);
+	public void deleteTask(int taskId);
+
+	public Task getTaskById(int taskId);
 	
 
 	

@@ -29,7 +29,8 @@ public class JDBCTaskDAOIntegrationTest extends DAOIntegrationTest {
 	public void verifyNewTask() {
 		
 		String taskName = "testing123alphbeta";
-		taskDAO.addTask(taskName);
+		int taskId = taskDAO.addTask(taskName);
+		System.out.println(taskId);
 		
 		List<Task> allTasks = taskDAO.getAllTasks();
 		

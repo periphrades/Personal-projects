@@ -23,6 +23,25 @@ public class JdbcChildDAO implements ChildDAO{
 		this.template = new JdbcTemplate(dataSource);
 	}
 
+	@Override
+	public List<Child> getAllChildren() {
+		
+		List<Child> allChildren = new ArrayList<Child>();
+		
+		String sql = "SELECT userid, user_name FROM users WHERE status = 'child'";
+		
+		SqlRowSet results = template.queryForRowSet(sql);
+		
+		while (results.next()) {
+			Child child = mapRowSetToChild(results);
+			allChildren.add(child);
+		}
+		
+		return allChildren;
+	}
+	
+	
+	
 
 	@Override
 	public List<DayTask> getChildDayTasks(Child user) {
@@ -75,7 +94,6 @@ public class JdbcChildDAO implements ChildDAO{
 		template.update(sql, user.getUserid(), task.getTaskId(), timesPerWeek, mostRecentMonday, note);
 	}
 	
-// need to remove day & week tasks from Child
 
 	private DayTask mapRowSetToDayTask(SqlRowSet result, Child user) {
 		DayTask dayTask = new DayTask();
@@ -95,8 +113,6 @@ public class JdbcChildDAO implements ChildDAO{
 		} else {
 			dayTask.setCompleted(result.getBoolean("completed"));
 		}
-		
-		
 		
 		return dayTask;
 	}
@@ -125,6 +141,23 @@ public class JdbcChildDAO implements ChildDAO{
 		
 		return weekTask;
 	}
+	
+	
+	private Child mapRowSetToChild(SqlRowSet results) {
+		Child child = new Child();
+		
+		child.setUserid(results.getInt("userid"));
+		child.setName(results.getString("user_name"));
+		
+		List<DayTask> dayTasks = getChildDayTasks(child);
+		child.setDayTasks(dayTasks);
+		
+		List<WeekTask> weekTasks = getChildWeekTasks(child);
+		child.setWeekTasks(weekTasks);
+		
+		return child;
+	}
+	
 	
 	
 }
