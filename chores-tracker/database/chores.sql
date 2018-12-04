@@ -3,6 +3,7 @@ CREATE TABLE users (
         user_name varchar(25) NOT NULL,
         passwd varchar(25),
         status varchar(6) NOT NULL,
+        last_date_loaded date,
         CONSTRAINT pk_users_userid PRIMARY KEY (userid),
         CONSTRAINT ck_status CHECK (status IN ('parent', 'child'))
 );
@@ -16,7 +17,6 @@ CREATE TABLE tasks (
 CREATE TABLE user_day_task (
         userid integer NOT NULL,
         taskid integer NOT NULL,
-        last_date_loaded date,
         completed boolean,
         note text,
         CONSTRAINT pk_user_day_task_userid_taskid PRIMARY KEY (userid, taskid),
@@ -27,7 +27,6 @@ CREATE TABLE user_day_task (
 CREATE TABLE user_week_task (
         userid integer NOT NULL,
         taskid integer NOT NULL,
-        last_Monday_loaded date,
         times_per_week integer,
         times_done_in_week integer,
         note text,
