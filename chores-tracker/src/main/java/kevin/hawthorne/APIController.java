@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,13 +40,12 @@ public class APIController {
 	}
 	
 	@RequestMapping (path = "/tasks/{taskid}", method = RequestMethod.GET)
-	public Task getTask(int taskId) {
+	public Task getTask(@PathVariable int taskId) {
 		return taskDAO.getTaskById(taskId);
 	}
 	
-	
 	@RequestMapping (path = "/tasks/{taskid}", method = RequestMethod.DELETE)
-	public ResponseEntity<?> deleteTask(int taskId) {
+	public ResponseEntity<?> deleteTask(@PathVariable int taskId) {
 		
 		Task task = taskDAO.getTaskById(taskId);
 		
