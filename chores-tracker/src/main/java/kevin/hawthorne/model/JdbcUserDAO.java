@@ -1,5 +1,9 @@
 package kevin.hawthorne.model;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +53,18 @@ public class JdbcUserDAO implements UserDAO {
 		user.setUserid( result.getInt("userid") );
 		user.setName( result.getString("user_name") );
 		user.setPassword( result.getString("passwd") );
+		
+		if (user.getStatus().equals("child")) {
+			Child child = (Child) user;
+			
+			LocalDate date = result.getDate("last_date_loaded").toLocalDate();
+			if (date == null) {
+				child.setLastDateLoaded(LocalDate.now());
+			} else {
+				child.setLastDateLoaded(date);
+			}
+			
+		}
 		
 		return user;
 	}

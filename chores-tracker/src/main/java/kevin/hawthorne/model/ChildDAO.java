@@ -13,6 +13,8 @@ public interface ChildDAO {
 	public void addChildDayTask(Task task, Child user, String note);
 
 	public List<Child> getAllChildren();
+
+	public void updateLastDateLoaded(Child child);
 	
 	
 }

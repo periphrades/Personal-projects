@@ -45,10 +45,10 @@
 	</bean>
 	
     <!-- enable the configuration of transactional behavior based on annotations -->
-    <!-- 
+    
     <tx:annotation-driven transaction-manager="txManager"/>
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-	-->
+    
 </beans>

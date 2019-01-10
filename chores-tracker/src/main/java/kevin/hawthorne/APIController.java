@@ -39,12 +39,12 @@ public class APIController {
 		return ResponseEntity.created(URI.create("/tasks/" + taskId)).build();
 	}
 	
-	@RequestMapping (path = "/tasks/{taskid}", method = RequestMethod.GET)
+	@RequestMapping (path = "/tasks/{taskId}", method = RequestMethod.GET)
 	public Task getTask(@PathVariable int taskId) {
 		return taskDAO.getTaskById(taskId);
 	}
 	
-	@RequestMapping (path = "/tasks/{taskid}", method = RequestMethod.DELETE)
+	@RequestMapping (path = "/tasks/{taskId}", method = RequestMethod.DELETE)
 	public ResponseEntity<?> deleteTask(@PathVariable int taskId) {
 		
 		Task task = taskDAO.getTaskById(taskId);

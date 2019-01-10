@@ -1,5 +1,7 @@
 package kevin.hawthorne;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import kevin.hawthorne.model.Child;
 import kevin.hawthorne.model.ChildDAO;
 import kevin.hawthorne.model.DayTask;
 import kevin.hawthorne.model.TaskDAO;
 import kevin.hawthorne.model.User;
 import kevin.hawthorne.model.UserDAO;
+import kevin.hawthorne.model.WeekTask;
 
 
 @Controller
@@ -34,9 +38,9 @@ public class ChoresController {
 	@RequestMapping (path = "/", method = RequestMethod.GET )
 	public String displayLogin(ModelMap map) {
 		
-		if (map.get("user") != null) {
-			return "redirect:/homepage";
-		}
+//		if (map.get("user") != null) {
+//			return "redirect:/homepage";
+//		}
 		
 		return "loginPage";
 	}
@@ -48,7 +52,29 @@ public class ChoresController {
 		
 		if (user != null) {
 			if (user.getPassword().equals(password)) {
-				map.addAttribute("user", user);
+				
+				if (user.getStatus().equals("parent")) {
+					
+					map.addAttribute("user", user);
+					
+				} else {
+					Child child = (Child) user;
+					
+					List<DayTask> dayTasks = childDAO.getChildDayTasks(child);
+					
+					child.setDayTasks(dayTasks);
+					
+					List<WeekTask> weekTasks = childDAO.getChildWeekTasks(child);
+					
+					child.setWeekTasks(weekTasks);
+					
+					map.addAttribute("user", child);
+					
+					childDAO.updateLastDateLoaded(child);
+					
+				}
+				
+
 				return "redirect:/homepage";
 			}
 		}
@@ -59,13 +85,18 @@ public class ChoresController {
 	@RequestMapping (path = "/homepage", method = RequestMethod.GET )
 	public String showHomePage(ModelMap map) {
 		
-		if (map.get("user") == null) {
+		User user = (User) map.get("user");
+		
+		if (user == null) {
 			return "redirect:/";
 		}
 		
-		// render different page for different user status?
-		
-		return "homepage";
+		if (user.getStatus().equals("parent")) {
+			return "parentHome";
+		} else {
+			return "childHome";
+		}
+
 	}
 	
 	

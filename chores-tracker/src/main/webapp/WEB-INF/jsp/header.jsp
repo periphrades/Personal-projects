@@ -11,7 +11,9 @@
 	<body>
 	
 		<h2>Chores</h2>
-
-	</body>
-
-</html>
+		
+		<p>User: ${user.name}</p>
+		<p>Status: ${user.status}</p>
+ 		<c:if test="${user.status == 'child'}">
+			<p>Last Date Loaded: ${user.lastDateLoaded}</p>
+ 		</c:if>
